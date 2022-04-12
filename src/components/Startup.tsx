@@ -107,7 +107,6 @@ const Startup: React.FC = () => {
               className="checkbox"
               name="all"
               checked={!foundation.some((check) => check?.isChecked !== true)}
-              onChange={foundationChange}
             />
           </div>
 
@@ -138,7 +137,6 @@ const Startup: React.FC = () => {
               className="checkbox"
               name="all"
               checked={!discovery.some((check) => check?.isChecked !== true)}
-              onChange={discoveryChange}
             />
           </div>
 
@@ -169,7 +167,6 @@ const Startup: React.FC = () => {
               className="checkbox"
               name="all"
               checked={!delivery.some((check) => check?.isChecked !== true)}
-              onChange={deliveryChange}
             />
           </div>
 
