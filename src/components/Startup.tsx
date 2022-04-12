@@ -1,6 +1,5 @@
 import React, { useState, useEffect, SyntheticEvent } from "react";
 import "./Startup.scss";
-// import api from "../api/Api";
 
 const foundationCheckbox = [
   { name: "Setup virtual office" },
@@ -23,7 +22,8 @@ const Startup: React.FC = () => {
   const [foundation, setFoundation] = useState<any[]>([]);
   const [discovery, setDiscovery] = useState<any[]>([]);
   const [delivery, setDelivery] = useState<any[]>([]);
-  // const [finish, setFinish] = useState<any[]>([]);
+
+  const [disabled, setDisabled] = useState<boolean>(true);
 
   useEffect(() => {
     setFoundation(foundationCheckbox);
@@ -44,6 +44,12 @@ const Startup: React.FC = () => {
       );
       setFoundation(temp);
     }
+    //
+    if (checked) {
+      setDisabled(false);
+    } else {
+      setDisabled(true);
+    }
   };
 
   const discoveryChange = (e: SyntheticEvent) => {
@@ -59,20 +65,13 @@ const Startup: React.FC = () => {
       );
       setDiscovery(temp);
     }
+    //
+    if (checked) {
+      setDisabled(false);
+    } else {
+      setDisabled(true);
+    }
   };
-
-  // const fetch = async () => {
-  //   try {
-  //     const response = await api.get("");
-  //     // setFinish(response.data);
-  //     console.log(response.data);
-  //   } catch (error) {
-  //     console.log(`Error: ${error}`);
-  //   }
-  // };
-  // useEffect(() => {
-  //   fetch();
-  // }, []);
 
   const deliveryChange = (e: SyntheticEvent) => {
     const { name, checked } = e.target as HTMLInputElement;
@@ -107,6 +106,7 @@ const Startup: React.FC = () => {
               className="checkbox"
               name="all"
               checked={!foundation.some((check) => check?.isChecked !== true)}
+              onChange={foundationChange}
             />
           </div>
 
@@ -133,10 +133,12 @@ const Startup: React.FC = () => {
               Discovery
             </h2>
             <input
+              disabled={disabled}
               type="checkbox"
               className="checkbox"
               name="all"
               checked={!discovery.some((check) => check?.isChecked !== true)}
+              onChange={discoveryChange}
             />
           </div>
 
@@ -144,6 +146,7 @@ const Startup: React.FC = () => {
           {discovery.map((check, index) => (
             <div className="form__check" key={index}>
               <input
+                disabled={disabled}
                 type="checkbox"
                 className=""
                 name={check.name}
@@ -163,10 +166,12 @@ const Startup: React.FC = () => {
               Delivery
             </h2>
             <input
+              disabled={disabled}
               type="checkbox"
               className="checkbox"
               name="all"
               checked={!delivery.some((check) => check?.isChecked !== true)}
+              onChange={deliveryChange}
             />
           </div>
 
@@ -174,6 +179,7 @@ const Startup: React.FC = () => {
           {delivery.map((check, index) => (
             <div className="form__check" key={index}>
               <input
+                disabled={disabled}
                 type="checkbox"
                 className=""
                 name={check.name}
@@ -185,10 +191,6 @@ const Startup: React.FC = () => {
           ))}
         </form>
       </div>
-
-      {/* {finish.map((el) => (
-        <p key={el.id}>{el.text}</p>
-      ))} */}
     </section>
   );
 };
