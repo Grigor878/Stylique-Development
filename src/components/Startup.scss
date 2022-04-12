@@ -1,0 +1,49 @@
+.section {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: rgb(240, 240, 240);
+
+  .startup__bar {
+    background-color: white;
+    padding: 25px;
+  }
+
+  .checked__block {
+    margin-top: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .subtitle {
+    display: inline-flex;
+    align-items: center;
+    margin-right: 25px;
+
+    span {
+      font-size: 16px;
+      display: block;
+      border-radius: 100%;
+      padding: 6px 11px;
+      background-color: black;
+      color: white;
+      margin-right: 17px;
+    }
+  }
+
+  .checkbox {
+    width: 40px;
+    height: 40px;
+  }
+
+  .form__check {
+    margin-top: 17px;
+
+    input {
+      margin-right: 11px;
+      cursor: pointer;
+    }
+  }
+}
+
