@@ -156,7 +156,6 @@ const Startup: React.FC = () => {
               className="checkbox"
               name="all"
               checked={!delivery.some((check) => check?.isChecked !== true)}
-              onChange={deliveryChange}
             />
           </div>
 
