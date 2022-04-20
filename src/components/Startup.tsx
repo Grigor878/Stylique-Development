@@ -80,7 +80,7 @@ const Startup: React.FC = () => {
         <h2 className="title">My startup progress</h2>
 
         {/* Foundaton */}
-        <form className="">
+        <form>
           <div className="checked__block">
             <h2 className="subtitle">
               <span>1</span>
@@ -110,7 +110,7 @@ const Startup: React.FC = () => {
         </form>
 
         {/* Discovery */}
-        <form className="">
+        <form>
           <div className="checked__block">
             <h2 className="subtitle">
               <span>2</span>
@@ -145,7 +145,7 @@ const Startup: React.FC = () => {
         </form>
 
         {/* Delivery */}
-        <form className="">
+        <form>
           <div className="checked__block">
             <h2 className="subtitle">
               <span>3</span>
